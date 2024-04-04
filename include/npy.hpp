@@ -119,6 +119,7 @@ inline version_t read_magic(std::istream &istream) {
 }
 
 const std::unordered_map<std::type_index, dtype_t> dtype_map = {
+    {std::type_index(typeid(_Float16)), {host_endian_char, 'f', sizeof(_Float16)}},
     {std::type_index(typeid(float)), {host_endian_char, 'f', sizeof(float)}},
     {std::type_index(typeid(double)), {host_endian_char, 'f', sizeof(double)}},
     {std::type_index(typeid(long double)), {host_endian_char, 'f', sizeof(long double)}},
